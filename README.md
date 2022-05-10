@@ -1,9 +1,9 @@
 # Starter project
 
-[[Download]](https://github.com/aron123/infosystems-20-21-II/archive/refs/heads/week10/starter-project.zip)
+[[Download]](https://github.com/bszrmnydnl/inforendszerek_bead/archive/refs/heads/main.zip)
 
 ## Prerequisites
-MySQL server with database `info_rendszerek_beadando`.
+MySQL server with database `inforendszerek_bead`.
 
 ## Install
 To install dependencies: `npm install`
