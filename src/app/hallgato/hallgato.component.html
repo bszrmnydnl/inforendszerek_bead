@@ -1,0 +1,40 @@
+<style>
+  table, th, td {
+    border:0.5px solid black;
+  }
+</style>
+<br>
+<div style="margin: 60px">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label style="width: 200px" for="neptunKod">Neptun-kód:</label>
+    <input type="text" formControlName="neptunKod" neptunKod="neptunKod" id="neptunKod"><br>
+
+    <label style="width: 200px" for="nev">Hallgató neve:</label>
+    <input type="text" formControlName="nev" nev="nev" id="nev"><br>
+
+    <label style="width: 200px" for="tankor">Hallgató tanköre:</label>
+    <input type="text" formControlName="tankor" tankor="tankor" id="tankor"><br>
+
+    <button type="submit" class="btn btn-success">Hallgató hozzáadása</button>
+  </form>
+  <br>
+
+  <h1>Hallgatók listája:</h1><br>
+  <div *ngFor="let hallgato of hallgatok$ | async">
+    <table style="width:50%">
+      <tr>
+        <th>Hallgató neptun-kódja</th>
+        <th>Hallgató neve</th>
+        <th>Hallgató tanköre</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ hallgato.neptunKod }}</td>
+        <td>{{ hallgato.nev }}</td>
+        <td>{{ hallgato.tankor }}</td>
+        <td><button class="btn btn-danger" (click)="delHallgato(hallgato.neptunKod)">Hallgató törlése</button></td>
+      </tr>
+    </table>
+  </div>
+
+</div>

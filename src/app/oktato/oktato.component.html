@@ -1,0 +1,41 @@
+<style>
+  table, th, td {
+    border:0.5px solid black;
+  }
+</style>
+<br>
+<div style="margin: 60px">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label style="width: 200px" for="neptunKod">Neptunkód:</label>
+    <input type="text" formControlName="neptunKod" neptunKod="neptunKod" id="neptunKod"><br>
+
+    <label style="width: 200px" for="nev">Oktató neve:</label>
+    <input type="text" formControlName="nev" nev="nev" id="nev"><br>
+
+    <label style="width: 200px" for="tanszek">Tanszék:</label>
+    <input type="text" formControlName="tanszek" tanszek="tanszek" id="tanszek"><br>
+
+
+    <button type="submit" class="btn btn-success">Oktató hozzáadása</button>
+  </form>
+  <br>
+
+  <h1>Oktatók listája:</h1><br>
+  <div *ngFor="let oktato of oktatok$ | async">
+    <table style="width:50%">
+      <tr>
+        <th>Oktató neptun-kódja</th>
+        <th>Oktató neve</th>
+        <th>Oktató tanszéke</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ oktato.neptunKod }}</td>
+        <td>{{ oktato.nev }}</td>
+        <td>{{ oktato.tanszek }}</td>
+        <td><button class="btn btn-danger" (click)="delOktato(oktato.neptunKod)">Oktató törlése</button></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
