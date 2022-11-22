@@ -1,5 +1,4 @@
-# Starter project
-
+# Infórendszerek beadandó
 [[Download]](https://github.com/bszrmnydnl/inforendszerek_bead/archive/refs/heads/main.zip)
 
 ## Prerequisites
